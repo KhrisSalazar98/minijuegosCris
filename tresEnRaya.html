@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b267a8a1d.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <title>Minijuegos Cris</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="gradient_tresEnRaya">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-3 d-flex align-items-center justify-content-center">
+                    <a class="py-1 px-2 rounded-pill volver" href="index.html"><i class="fa-solid fa-circle-left"></i> Volver</a>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 text-center">
+                    <h1 class="text-center py-4 text-white"><i class="fa-solid fa-xmark fa-lg"></i> <span class="tituloLetra titituloLetraInicial">T</span><span class="tituloLetra">r</span><span class="tituloLetra">e</span><span class="tituloLetra">s</span> <span class="tituloLetra">E</span><span class="tituloLetra">n</span> <span class="tituloLetra">R</span><span class="tituloLetra">a</span><span class="tituloLetra">y</span><span class="tituloLetra">a</span> <i class="fa-regular fa-circle"></i></h1>
+                </div>
+                <div class="col-12 col-sm-12 col-md-3">
+                    
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Contenido -->
+    <main>
+        <div class="container">
+
+            <div class="row justify-content-center mt-4">
+
+                <div class="d-sm-none">
+                    
+                    <div class="text-center">
+                        <button class="rounded-pill border-0 mb-4 py-2 px-3 fs-20 btn_jugar_O_X" type="button" data-bs-toggle="modal" data-bs-target="#modalIniciarJuego"><strong>Iniciar Partida</strong></button>
+                    </div>
+
+                    <p class="text-center color_mostazaOscuro"><strong>Puntaje Máximo: <span class="puntaje_maximo_mobile">?</span></strong></p>
+                
+                </div>
+
+                <!-- Puntos de Jugador 1 -->
+                <div class="col-6 col-sm-3 col-xl-2 text-center">
+                    <p class="fs-20 color_mostazaOscuro"><strong>Jugador 1</strong></p>
+                    <i class="fa-solid fa-circle-user fs-80 jugador1"></i><br>
+                    <span><strong class="fs-30 puntaje_j1">0</strong></span>
+                </div>
+
+                <!-- Puntaje maximo -->
+                <div class="col-sm-5 col-xl-3 d-none d-sm-block text-center">
+
+                    <button class="rounded-pill border-0 mb-4 py-2 px-3 fs-20 btn_jugar_O_X" type="button" data-bs-toggle="modal" data-bs-target="#modalIniciarJuego"><strong>Iniciar Partida</strong></button>
+                    
+                    <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#modalMensajeEmergente">emergente</button> -->
+                    
+                    <p class="fs-20 text-center color_mostazaOscuro">
+                        <strong>Puntaje Máximo</strong> <span class="fs-30 color_mostazaOscuro puntaje_maximo">?</span>
+                    </p>
+
+                    <!-- Indicador turno desktop -->
+                    <span class="opacity-0 txt_turno"><strong>Turno del jugador</strong></span>
+                    
+                </div>
+
+                <!-- Puntos de Jugador 2 -->
+                <div class="col-6 col-sm-3 col-xl-2 text-center">
+                    <p class="fs-20 color_mostazaOscuro"><strong>Jugador 2</strong></p>
+                    <i class="fa-solid fa-circle-user fs-80 jugador2"></i><br>
+                    <span><strong class="fs-30 puntaje_j2">0</strong></span>
+                </div> 
+
+            </div>
+
+            <!-- Indicador turno mobile -->
+            <div class="d-sm-none text-center">
+                <span class="opacity-0 txt_turno"><strong>Turno del jugador</strong></span>
+            </div>
+
+            <div class="row mt-5 rounded-2 border_tresEnRaya">
+                
+                <!-- Fila 1  -->
+                <div class="col-4 col-sm-4 px-0 text-center border_bottom_right">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                <div class="col-4 col-sm-4 px-0 text-center border_bottom_right_left">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                <div class="col-4 col-sm-4 px-0 text-center border_bottom_left">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                <!-- Fila 2  -->
+                <div class="col-4 col-sm-4 px-0 text-center border_bottom_right">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                <div class="col-4 col-sm-4 px-0 text-center border_bottom_right_left">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                <div class="col-4 col-sm-4 px-0 text-center border_bottom_left">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                <!-- Fila 3  -->
+                <div class="col-4 col-sm-4 px-0 text-center border_right">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                <div class="col-4 col-sm-4 px-0 text-center border_right_left">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                <div class="col-4 col-sm-4 px-0 text-center border_left">
+                    <button class="w-100 border-0 btn_x_o" type="button">*</button>
+                </div>
+
+                
+            </div>
+
+    
+            <!-- Modales -->
+
+            <!-- Modal Comenzar Partida -->
+            <div class="modal fade" id="modalIniciarJuego" tabindex="-1" aria-labelledby="IniciarJuego" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header gradient_tresEnRaya">
+                            <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Duración de la partida</h1>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body mt-3">
+                            <div class="form-check">
+                                <input class="form-check-input tresEnRaya" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label fs-20" for="flexRadioDefault1">
+                                  2 Puntos
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input tresEnRaya" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label fs-20" for="flexRadioDefault2">
+                                    3 Puntos
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input tresEnRaya" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                <label class="form-check-label fs-20" for="flexRadioDefault3">
+                                    5 Puntos
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input tresEnRaya" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                                <label class="form-check-label fs-20" for="flexRadioDefault4">
+                                    10 Puntos
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="rounded-pill border-0 px-4 py-2 btn_comenzarPartida_tresEnRaya btn_deshabilitado" data-bs-dismiss="modal">Comenzar Partida</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Mensajes Emergentes -->
+            <div class="modal fade" id="modalMensajeEmergente" tabindex="-1" aria-labelledby="MensajeEmergente" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header gradient_tresEnRaya">
+                            <h1 class="modal-title fs-20 text-white tituloMensajeEmergenteTresEnRaya" id="exampleModalLabel">Titulo modal emergente</h1>
+                        </div>
+                        <div class="modal-body mt-3">
+                            
+                            <p class="text-center contenidoMensajeEmergenteTresEnRaya">Cuerpo de modal Emergente</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </main>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="assets/js/animacionTitulo.js"></script>
+    <script type="text/javascript" src="assets/js/tresEnRaya.js"></script>
+</body>
+</html>

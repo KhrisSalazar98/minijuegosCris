@@ -1,0 +1,1397 @@
+:root{
+
+    --akaya: 'Akaya Telivigala', cursive;
+
+    --blanco: #fff;
+    --negro: #000;
+
+    --grisClaro: #e2dede;
+    --grisCentroIzquierda: #a6a3a3;
+    --grisIntermedio: #7d7b7b;
+    --grisCentroDerecha: #4f4e4e;
+    --grisOscuro: #202020;
+
+    --rojoClaro: #ff0000;
+    --rojoCentroIzquierda: #d70000;
+    --rojoIntermedio: #b30000;
+    --rojoCentroDerecha: #910000;
+    --rojoOscuro: #6b0000;
+
+    --mostazaClaro: #ffaf03;
+    --mostazaCentroIzquierda: #da9602;
+    --mostazaIntermedio: #ba8001;
+    --mostazaCentroDerecha: #916400;
+    --mostazaOscuro: #6c4a00;
+
+    --verdeClaro: #00ff21;
+    --verdeCentroIzquierda: #00cf1b;
+    --verdeIntermedio: #00a516;
+    --verdeCentroDerecha: #007e11;
+    --verdeOscuro: #00530b;
+
+    --calipsoClaro: #00fccb;
+    --calipsoCentroIzquierda: #00d4ab;
+    --calipsoIntermedio: #00ac8b;
+    --calipsoCentroDerecha: #008068;
+    --calipsoOscuro: #005545;
+
+    --azulClaro: #0603ff;
+    --azulCentroIzquierda: #0402bf;
+    --azulIntermedio: #02017e;
+    --azulCentroDerecha: #010146;
+    --azulOscuro: #000020;
+
+    --font2: 2px;
+    --font3: 3px;
+    --font4: 4px;
+    --font6: 6px;
+    --font8: 8px;
+    --font13: 13px;
+    --font14: 14px;
+    --font15: 15px;
+    --font25: 25px;
+    --font16: 16px;
+    --font18: 18px;
+    --font19: 19px;
+    --font20: 20px;
+    --font30: 30px;
+    --font80: 80px;
+}
+
+/*---- INDEX ---*/
+body{
+    font-family: var(--akaya);
+}
+
+a{
+    text-decoration: none;
+}
+
+.modal-header, .modal-footer{
+    border: none;
+}
+
+.letras_deshabilitadas,.btn_deshabilitado{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.btn_deshabilitado2{
+    pointer-events: none;
+}
+
+.color_grisCentroDerecha{
+    color: var(--grisCentroDerecha);
+}
+
+.fs-20{
+    font-size: var(--font20);
+}
+
+.fs-25{
+    font-size: var(--font25);
+}
+
+.fs-30{
+    font-size: var(--font30);
+}
+
+.fs-80{
+    font-size: var(--font80);
+}
+
+.bg_grisClaro{
+    background-color: var(--grisClaro);   
+}
+
+.gradient_principal,.container_opcs{
+    box-shadow: var(--font2) 9px var(--font15) var(--font2) var(--negro);
+}
+
+.gradient_principal{
+    background: linear-gradient(90deg, rgba(226,222,222,1) 50%, rgba(32,32,32,1) 100%);
+}
+
+.container_opcs{
+    background-color: rgba(226,222,222,1);
+}
+
+.titulo{
+    color: var(--negro);
+    animation: animacionTitulo 3s ease infinite;
+}
+
+@keyframes animacionTitulo {
+    0% { color: var(--negro) }
+    20% { color: var(--rojoOscuro);}
+    40% { color: var(--rojoCentroDerecha); }
+    60% { color: var(--rojoCentroIzquierda);}
+    80% { color: var(--rojoClaro);}
+    100% { color: var(--rojoCentroDerecha)}
+}
+
+.tituloLetra{
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.volver{
+    color:var(--blanco);
+    font-size: var(--font20);
+    transition: all 0.1s;
+}
+
+.volver:hover{
+    color: var(--blanco);
+    border: solid var(--font2) var(--blanco);
+}
+
+/*---- SOPA DE LETRAS ---*/
+
+.gradient_sopaDeLetras,.btn_jugar, .btn_comenzarPartida{
+    box-shadow: 1px var(--font3) var(--font15) 0px var(--rojoCentroDerecha);
+}
+
+.gradient_sopaDeLetras{
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(107,0,0,1) 100%);
+}
+
+.color_rojoOscuro{
+    color: var(--rojoOscuro);
+}
+
+.btn_jugar, .btn_comenzarPartida{
+    color: var(--blanco);
+    transition: all 0.3s;
+}
+
+.txt_tiempo{
+    color: var(--rojoCentroDerecha);
+    font-size: var(--font20);
+}
+
+.btn_jugar{
+    background-color: var(--rojoCentroDerecha);
+    font-size: var(--font20);
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: var(--rojoIntermedio);
+    border-color: var(--rojoCentroDerecha);
+}
+
+.btn_comenzarPartida{
+    background-color: var(--rojoOscuro);
+    font-size: var(--font18);
+}
+
+.border_sopaLetras{
+    border: solid var(--font3) var(--rojoIntermedio);
+    box-shadow: 1px 1px var(--font15) 5px var(--rojoCentroDerecha);
+}
+
+.btn_letra{
+    background-color: transparent;
+    color: var(--rojoCentroDerecha);
+    border: solid var(--font2) var(--rojoCentroDerecha);
+    transition: all 0.3s;
+}
+
+.btn_letra_click{
+    background-color: var(--rojoCentroIzquierda);
+    color: var(--blanco);
+    border: solid var(--font2) var(--rojoCentroIzquierda);
+}
+
+.palabra_correcta{
+   background-color: var(--rojoClaro);
+   color: var(--blanco);
+   border: solid var(--font2) var(--rojoClaro);
+   box-shadow: 0px var(--font3) var(--font13) 0px var(--rojoOscuro);
+   pointer-events: none;
+   animation: animacion_palabra_correcta 3s ease infinite;
+}
+
+@keyframes animacion_palabra_correcta {
+
+    0% {
+
+        background-color: var(--rojoClaro);
+        border: solid var(--font2) var(--rojoClaro);
+
+    }
+
+    25% {
+        background-color: var(--rojoCentroIzquierda);
+        border: solid var(--font2) var(--rojoCentroIzquierda)
+    }
+
+    50% {
+        background-color: var(--rojoIntermedio);
+        border: solid var(--font2) var(--rojoIntermedio);
+    }
+
+    75% {
+        background-color: var(--rojoCentroDerecha);
+        border: solid var(--font2) var(--rojoCentroDerecha);
+    }
+
+   
+    100% {
+        background-color: var(--rojoClaro);
+        border: solid var(--font2) var(--rojoClaro)
+    }
+    
+}
+
+.palabra{
+    color:var(--rojoCentroDerecha);
+}
+
+
+/*---- TRES EN RAYA ----*/
+
+.color_mostazaOscuro{
+    color: var(--mostazaOscuro);
+}
+
+.gradient_tresEnRaya{
+    background: linear-gradient(90deg, rgba(255,175,3,1) 0%, rgba(108,74,0,1) 100%);
+    box-shadow: 1px var(--font3) var(--font15) 0px var(--mostazaCentroDerecha);
+}
+
+.border_tresEnRaya{
+    border: solid var(--font3) var(--mostazaIntermedioIntermedio);
+    box-shadow: 1px 1px var(--font15) 5px var(--mostazaCentroDerecha);
+}
+
+.form-check-input.tresEnRaya:checked {
+    background-color: var(--mostazaIntermedio);
+    border-color: var(--mostazaCentroDerecha);
+}
+
+.puntaje_maximo{
+    font-weight: 900;
+}
+
+.btn_jugar_O_X,.btn_comenzarPartida_tresEnRaya{
+    background-color: var(--mostazaCentroDerecha);
+    color: var(--blanco);
+    box-shadow: 1px var(--font3) var(--font15) 0px var(--mostazaCentroDerecha);
+    transition: all 0.3s;
+}
+
+.btn_comenzarPartida_tresEnRaya{
+    font-size: var(--font18);
+}
+
+.jugador1, .jugador2{
+    border-radius: 50%;
+    box-shadow: 0px 1px 12px var(--font2) var(--negro);
+}
+
+.jugador1,.puntaje_j1,.txt_jugador1{
+    background: linear-gradient(180deg, rgba(255,3,3,1) 0%, rgba(27,0,0,1) 100%);
+}
+
+.jugador2,.puntaje_j2,.txt_jugador2{
+    background: linear-gradient(180deg, rgba(6,3,255,1) 0%, rgba(0,0,32,1) 100%);
+}
+
+.turno_jugador1{
+    box-shadow: 0px 1px var(--font8) var(--font8) var(--rojoClaro);
+    animation: animacionTurnoJ1 2s ease infinite;
+}
+
+@keyframes animacionTurnoJ1 {
+    from { box-shadow: 0px 1px var(--font8) var(--font8) var(--rojoClaro);}
+    to { box-shadow: 0px 1px var(--font8) var(--font8) var(--rojoCentroDerecha);}
+}
+
+.turno_jugador2{
+    box-shadow: 0px 1px var(--font8) var(--font8) var(--azulClaro);
+    animation: animacionTurnoJ2 2s ease infinite;
+}
+
+@keyframes animacionTurnoJ2 {
+    from { box-shadow: 0px 1px var(--font8) var(--font8) var(--azulClaro);}
+    to { box-shadow: 0px 1px var(--font8) var(--font8) var(--azulCentroDerecha);}
+}
+
+.jugador1,.puntaje_j1,.jugador2,.puntaje_j2,.txt_jugador1,.txt_jugador2{
+    background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.btn_x_o{
+    height: 110px;
+    background-color: var(--blanco);
+    font-size: 85px;
+}
+
+.border_bottom_right{
+    border-bottom: solid var(--font6) var(--mostazaIntermedio);
+    border-right: solid var(--font3) var(--mostazaIntermedio);
+    border-top: none;
+    border-left: none;
+}
+
+.border_bottom_right_left{
+    border-bottom: solid var(--font6) var(--mostazaIntermedio);
+    border-right: solid var(--font3) var(--mostazaIntermedio);
+    border-left: solid var(--font3) var(--mostazaIntermedio);
+}
+
+.border_bottom_left{
+    border-bottom: solid var(--font6) var(--mostazaIntermedio);
+    border-left: solid var(--font3) var(--mostazaIntermedio);
+}
+
+.border_right{
+    border-right: solid var(--font3) var(--mostazaIntermedio);
+}
+
+.border_right_left{
+    border-left: solid var(--font3) var(--mostazaIntermedio);
+    border-right: solid var(--font3) var(--mostazaIntermedio);
+}
+
+.border_left{
+    border-left: solid var(--font3) var(--mostazaIntermedio);
+}
+
+.j1, .j2 ,.j1_ganador, .j2_ganador{ font-weight: 900; }
+
+.j1{
+    animation: parpadeo_j1 4s ease infinite;
+}
+
+@keyframes parpadeo_j1 {
+    
+    0%{
+        color: var(--rojoCentroDerecha);
+    }
+
+    25%{
+        color: var(--rojoIntermedio);
+    }
+
+    50%{
+        color: var(--rojoCentroIzquierda);
+    }
+
+    75%{
+        color: var(--rojoClaro);
+    }
+
+    100%{
+        color: var(--rojoCentroDerecha);
+    }
+}
+
+.j2{
+    animation: parpadeo_j2 4s ease infinite;
+}
+
+@keyframes parpadeo_j2{
+
+    0%{
+        color: var(--azulCentroDerecha);
+    }
+
+    25%{
+        color: var(--azulIntermedio);
+    }
+
+    50%{
+        color: var(--azulCentroIzquierda);
+    }
+
+    75%{
+        color: var(--azulClaro);
+    }
+
+    100%{
+        color: var(--azulCentroDerecha);
+    }
+}
+
+.j1_ganador{
+    color: var(--rojoClaro);
+    text-shadow: 4px -3px var(--font6) rgba(131,7,7,0.61);
+}
+
+.j2_ganador{
+    color: var(--azulClaro);
+    text-shadow: 4px -3px var(--font6) rgba(27,7,131,0.61);
+}
+
+/*--- MEMORICE ---*/
+
+.gradient_memorice{
+    background: linear-gradient(90deg, rgba(0,255,33,1) 0%, rgba(0,83,11,1) 100%);
+    box-shadow: 1px var(--font3) var(--font15) 0px var(--verdeCentroDerecha);
+}
+
+.border_memorice{
+    border: solid var(--font3) var(--verdeIntermedio);
+    box-shadow: 1px 1px var(--font15) 5px var(--verdeCentroDerecha);
+}
+
+.txt_tiempo_memorice{
+    color: var(--verdeCentroDerecha);
+    font-size: var(--font20);
+}
+
+.btn_jugar_memorice{
+    background-color: var(--verdeCentroDerecha);
+    font-size: var(--font20);
+    color: var(--blanco);
+    box-shadow: 1px var(--font3) var(--font15) 0px var(--verdeCentroDerecha);
+    transition: all 0.3s;
+}
+
+.color_verdeOscuro{
+    color: var(--verdeOscuro);
+}
+
+.caras_tarjeta,.caras_tarjeta_j1,.caras_tarjeta_j2{
+    border-radius: var(--font6);
+}
+
+.caras_tarjeta{  
+    border: solid var(--font3) var(--verdeIntermedio);
+    box-shadow: 1px 1px var(--font15) 0px var(--verdeCentroDerecha);
+}
+
+.caras_tarjeta_j1{
+    border: solid var(--font3) var(--rojoClaro);
+    box-shadow: 1px 1px var(--font15) 8px var(--rojoCentroDerecha);
+    animation: brillo_j1 2s ease infinite;
+}
+
+@keyframes brillo_j1{
+
+    from { box-shadow: 1px 1px var(--font15) 8px var(--rojoCentroDerecha); }
+    to { box-shadow: 1px 1px var(--font15) 8px var(--rojoCentroIzquierda); }
+}
+
+.caras_tarjeta_j2{
+    border: solid var(--font3) var(--azulClaro);
+    box-shadow: 1px 1px var(--font15) 8px var(--azulCentroDerecha);
+    animation: brillo_j2 2s ease infinite;
+}
+
+@keyframes brillo_j2{
+
+    from { box-shadow: 1px 1px var(--font15) 8px var(--azulCentroDerecha); }
+    to { box-shadow: 1px 1px var(--font15) 8px var(--azulCentroIzquierda); }
+}
+
+
+.flip-box {
+    height: 86px;
+    perspective: 1000px;
+}
+  
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+  
+
+.fb_inner_180deg{
+    transform: rotateY(180deg);
+}
+  
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+  
+.bg_front{
+    background: radial-gradient(circle, rgba(0,255,33,1) 0%, rgba(0,83,11,1) 100%);
+}
+
+.color_ico_front{
+    background: linear-gradient(180deg, rgba(0,255,33,1) 50%, rgba(0,83,11,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.colorHTML5{
+    color: #ec6231;
+}
+
+.bg_box_back1{
+    background: radial-gradient(circle, rgba(82,22,1,1) 50%, rgba(236,98,49,1) 100%);
+}
+
+.colorCSS3{
+    color: #264de4;
+}
+
+.bg_box_back2{
+    background: radial-gradient(circle, rgba(1,20,93,1) 60%, rgba(38,77,228,1) 100%);
+}
+
+.colorJS{
+    color: #F0DB4F;
+}
+
+.bg_box_back3{
+    background: radial-gradient(circle, rgba(57,50,1,1) 60%, rgba(240,219,79,1) 100%);
+}
+
+.colorSASS{
+    color: #CD6799;
+}
+
+.bg_box_back4{
+    background: radial-gradient(circle, rgba(96,2,48,1) 60%, rgba(205,103,153,1) 100%);
+}
+
+.colorBOOTSTRAP{
+    color: #553C7B;
+}
+
+.bg_box_back5{
+    background: radial-gradient(circle, rgba(23,0,59,1) 60%, rgba(85,60,123,1) 100%);
+}
+
+.colorREACT{
+    color: #61DBFB;
+}
+
+.bg_box_back6{
+    background: radial-gradient(circle, rgba(0,62,78,1) 60%, rgba(97,219,251,1) 100%);
+}
+
+.colorANGULAR{
+    color: #dd1b16;
+}
+
+.bg_box_back7{
+    background: radial-gradient(circle, rgba(75,2,0,1) 60%, rgba(221,27,22,1) 100%);
+}
+
+.colorVUE{
+    color: #42b883;
+}
+
+.bg_box_back8{
+    background: radial-gradient(circle, rgba(0,57,32,1) 60%, rgba(66,184,131,1) 100%);
+}
+
+.colorPHP{
+    color: #474A8A;
+}
+
+.bg_box_back9{
+    background: radial-gradient(circle, rgba(37,38,65,1) 60%, rgba(71,74,138,1) 100%);
+}
+
+.colorGO{
+    color: #29BEB0;
+}
+
+.bg_box_back10{
+    background: radial-gradient(circle, rgba(0,70,64,1) 60%, rgba(41,190,176,1) 100%);
+}
+
+.colorGIT{
+    color: #F1502F;
+}
+
+.bg_box_back11{
+    background: radial-gradient(circle, rgba(77,14,1,1) 60%, rgba(241,80,47,1) 100%);
+}
+
+.colorNODE{
+    color: #3C873A;
+}
+
+.bg_box_back12{
+    background: radial-gradient(circle, rgba(22,50,21,1) 60%, rgba(60,135,58,1) 100%);
+}
+  
+/* Style the back side */
+.flip-box-back {
+    transform: rotateY(180deg);
+}
+
+.form-check-input.memorice:checked {
+    background-color: var(--verdeIntermedio);
+    border-color: var(--verdeCentroDerecha);
+}
+
+/*---- SIMÓN DICE ----*/
+.gradient_simonDice{
+    background: linear-gradient(90deg, rgba(0,252,203,1) 0%, rgba(0,85,69,1) 100%);
+    box-shadow: 1px var(--font3) var(--font15) 0px var(--calipsoCentroDerecha);
+}
+
+.border_simonDice{
+    border: solid var(--font3) var(--calipsoIntermedio);
+    box-shadow: 1px 1px var(--font15) 5px var(--calipsoCentroDerecha);
+}
+
+.rondas{
+    font-size: 22px;
+    color: var(--calipsoIntermedio);
+}
+
+.txt_partida_SD{
+    color: var(--calipsoCentroDerecha);
+    font-size: var(--font20);
+}
+
+.btn_jugar_SD{
+    background-color: var(--calipsoCentroDerecha);
+    font-size: var(--font20);
+    color: var(--blanco);
+    box-shadow: 1px var(--font3) var(--font15) 0px var(--calipsoCentroDerecha);
+    transition: all 0.3s;
+}
+
+.form-check-input.simonDice:checked {
+    background-color: var(--calipsoIntermedio);
+    border-color: var(--calipsoCentroDerecha);
+}
+
+.btn_color{
+    transition: all 0.3s;
+}
+
+.btn_color:active,.active{
+    filter: brightness(150%);
+}
+
+.icono_btn_color{
+    font-size: 120px;
+}
+
+.bgRojo,.bgNaranja,.bgVerde,.bgLimon,.bgCeleste,.bgAmarillo,.bgMorado,.bgAzul,.bgCalipso{
+    border: solid var(--font3);
+}
+
+/*calipso*/
+.colorCalipso{
+    color: var(--calipsoIntermedio);
+}
+
+.bgCalipso{
+    background: radial-gradient(circle, rgba(4,47,39,1) 60%, rgba(0,212,171,1) 100%);
+    border-color: var(--calipsoIntermedio);
+}
+
+/*rojo*/
+.colorRojo{
+    color: #ad0000;
+}
+
+.bgRojo{
+    background: radial-gradient(circle, rgba(60,4,4,1) 60%, rgba(255,0,0,1) 100%);
+    border-color: #ad0000;
+}
+
+/*naranja*/
+.colorNaranja{
+    color: #c45301;
+}
+
+.bgNaranja{
+    background: radial-gradient(circle, rgba(55,26,5,1) 60%, rgba(255,106,0,1) 100%);
+    border-color: #c45301;
+}
+
+/*verde*/
+.colorVerde{
+    color: #00b40b;
+}
+
+.bgVerde{
+    background: radial-gradient(circle, rgba(3,42,5,1) 60%, rgba(0,255,16,1) 100%);
+    border-color: #00b40b;
+}
+
+/*limón*/
+.colorLimon{
+    color: #84d100;
+}
+
+.bgLimon{
+    background: radial-gradient(circle, rgba(33,50,4,1) 60%, rgba(160,255,0,1) 100%);
+    border-color: #84d100;
+}
+
+/*celeste*/
+.colorCeleste{
+    color: #00cdcd;
+}
+
+.bgCeleste{
+    background: radial-gradient(circle, rgba(4,51,51,1) 60%, rgba(0,254,255,1) 100%);
+    border-color: #00cdcd;
+}
+
+/*amarillo*/
+.colorAmarillo{
+    color: #d5d906;
+}
+
+.bgAmarillo{
+    background: radial-gradient(circle, rgba(39,40,2,1) 60%, rgba(250,255,0,1) 100%);
+    border-color: #d5d906;
+}
+
+/*morado*/
+.colorMorado{
+    color: #a200ff;
+}
+
+.bgMorado{
+    background: radial-gradient(circle, rgba(28,5,41,1) 60%, rgba(162,0,255,1) 100%);
+    border-color: #a200ff;
+}
+
+/*azul*/
+.colorAzul{
+    color: #0001d5;
+}
+
+.bgAzul{
+    background: radial-gradient(circle, rgba(5,5,56,1) 60%, rgba(0,1,255,1) 100%);
+    border-color: #0001d5;
+}
+
+
+@media (min-width: 238px){
+    /*--- INDEX ---*/
+    .iconos_minijuegos{
+        display: none;
+    }
+
+    /*--- SOPA DE LETRAS ---*/
+    .row > .col_letras {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .txt_objetivo{
+        font-size: var(--font13);
+        color: var(--rojoIntermedio);
+    }
+
+    .txt_nombres{
+        color: var(--rojoIntermedio);
+        font-size: var(--font16);
+    }
+
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 9px;
+        font-size: 9px;
+    }
+
+    .contenidoMensajeEmergenteSopaLetras{
+        color: var(--rojoIntermedio);
+        font-size: var(--font16);
+    }
+
+    .contenidoMensajeEmergenteTresEnRaya{
+        color: var(--mostazaIntermedio);
+        font-size: var(--font16);
+    }
+
+    /*--- MEMORICE ---*/
+    .txt_objetivo_memorice{
+        font-size: var(--font13);
+        color: var(--verdeIntermedio);
+    }
+
+    .contenidoMensajeEmergenteMemorice{
+        color: var(--verdeIntermedio);
+        font-size: var(--font16);
+    }
+
+    .color_ico_front,.colorHTML5,.colorCSS3,.colorJS,.colorSASS,.colorBOOTSTRAP,.colorREACT,.colorREACT,.colorANGULAR,.colorVUE,.colorPHP,.colorGO,.colorGIT,.colorNODE{
+        font-size: 49px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color{
+        font-size: 40px;
+    }
+
+
+}  
+
+@media (min-width: 245px){
+    /*--- SOPA DE LETRAS ----*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 10px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color{
+        font-size: 42px;
+    }
+    
+}
+
+@media (min-width: 260px){
+    /*--- SOPA DE LETRAS ----*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 11px;
+    }
+
+    /*--- MEMORICE ---*/
+    .color_ico_front,.colorHTML5,.colorCSS3,.colorJS,.colorSASS,.colorBOOTSTRAP,.colorREACT,.colorREACT,.colorANGULAR,.colorVUE,.colorPHP,.colorGO,.colorGIT,.colorNODE{
+        font-size: 56px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color{
+        font-size: 47px;
+    }
+    
+}
+
+@media (min-width: 276px){
+    /*--- SOPA DE LETRAS ----*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 12px;
+    }
+
+    /*--- MEMORICE ---*/
+    .color_ico_front,.colorHTML5,.colorCSS3,.colorJS,.colorSASS,.colorBOOTSTRAP,.colorREACT,.colorREACT,.colorANGULAR,.colorVUE,.colorPHP,.colorGO,.colorGIT,.colorNODE{
+        font-size: 64px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color{
+        font-size: 52px;
+    }
+    
+}
+
+@media (min-width: 280px) {
+    /*--- INDEX ---*/
+    .iconos_minijuegos{
+        display: inline;
+    }
+
+    .opc_miniJuego{
+        opacity: 1;
+        transition: all 0.3s;
+    }
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 12px;
+        font-size: 10px;
+    }
+
+    /*---- TRES EN RAYA ---*/
+    .txt_turno{
+        font-size: var(--font20);
+    }
+
+    /*--- MEMORICE ---*/
+    .color_ico_front,.colorHTML5,.colorCSS3,.colorJS,.colorSASS,.colorBOOTSTRAP,.colorREACT,.colorREACT,.colorANGULAR,.colorVUE,.colorPHP,.colorGO,.colorGIT,.colorNODE{
+        font-size: 66px;
+    }
+
+    .txt_turno_memorice{
+        font-size: var(--font20);
+    }
+
+    
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color{
+        font-size: 53px;
+    }
+
+    .txt_objetivo_simonDice{
+        font-size: var(--font13);
+        color: var(--calipsoIntermedio);
+    }
+
+    .btn_color{
+        box-shadow: 1px var(--font3) var(--font6) var(--font2) var(--negro);
+    }
+
+    .contenidoMensajeEmergenteSD{
+        color: var(--calipsoIntermedio);
+        font-size: var(--font16);
+    }
+}
+
+@media (min-width: 300px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font13);
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 58px;
+    }
+}
+
+@media (min-width: 310px){
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 320px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font14);
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 65px;
+    }
+}
+
+@media (min-width: 330px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font15);
+    }
+
+    /*--- MEMORICE ---*/
+    .color_ico_front,.colorHTML5,.colorCSS3,.colorJS,.colorSASS,.colorBOOTSTRAP,.colorREACT,.colorREACT,.colorANGULAR,.colorVUE,.colorPHP,.colorGO,.colorGIT,.colorNODE{
+        font-size: 75px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 70px;
+    }
+}
+
+@media (min-width: 340px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font16);
+    }
+}
+
+@media (min-width: 350px){
+    
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 75px;
+    }
+}
+
+@media (min-width: 360px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 17px;
+    }
+}
+
+@media (min-width: 370px){
+
+    /*--- MEMORICE ---*/
+    .color_ico_front,.colorHTML5,.colorCSS3,.colorJS,.colorSASS,.colorBOOTSTRAP,.colorREACT,.colorREACT,.colorANGULAR,.colorVUE,.colorPHP,.colorGO,.colorGIT,.colorNODE{
+        font-size: 80px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 80px;
+    }
+}
+
+
+@media (min-width: 380px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font18);
+    }
+}
+
+@media (min-width: 390px) {
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font19);
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 85px;
+    }
+}
+
+@media (min-width: 400px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font18);
+        font-size: var(--font13);
+    }
+
+    .row > .col_letras {
+        
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+    }
+}
+
+@media (min-width: 420px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font19);
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 90px;
+    }
+}
+
+@media (min-width: 430px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: var(--font20);
+    }
+}
+
+@media (min-width: 440px) {
+    
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 95px;
+    }
+}
+
+@media (min-width: 450px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 21px;
+    }
+}
+
+@media (min-width: 460px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 22px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 100px;
+    }
+}
+
+@media (min-width: 480px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 23px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 110px;
+    }
+}
+
+@media (min-width: 500px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 24px;
+        font-size: var(--font15);
+    }
+}
+
+@media (min-width: 520px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 25px;
+    }
+}
+
+@media (min-width: 530px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 26px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .icono_btn_color {
+        font-size: 120px;
+    }
+}
+
+@media (min-width: 540px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 27px;
+    }
+}
+
+@media (min-width: 560px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 28px;
+    }
+}
+
+@media (min-width: 576px) { 
+    
+    /*---- SOPA DE LETRAS ---*/
+    .contenidoMensajeEmergenteSopaLetras{
+        font-size: var(--font20);
+    }
+
+    .txt_objetivo{
+        font-size: var(--font15);
+    }
+
+    .txt_nombres{
+        font-size: var(--font18);
+    }
+
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 25px;
+    }
+
+    /*---- TRES EN RAYA ---*/
+    .contenidoMensajeEmergenteTresEnRaya{
+        font-size: var(--font20);
+    }
+
+    /*--- MEMORICE ---*/
+    .txt_objetivo_memorice{
+        font-size: var(--font15);
+    }
+
+    .txt_turno_memorice{
+        font-size: 22px;
+    }
+
+    .contenidoMensajeEmergenteMemorice{
+        font-size: var(--font20);
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .txt_objetivo_simonDice{
+        font-size: var(--font15);
+    }
+
+    .contenidoMensajeEmergenteSD{
+        font-size: var(--font20);
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .txt_objetivo{
+        font-size: var(--font16);
+    }
+
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 35px;
+    }
+
+    /*--- MEMORICE ---*/
+    .txt_objetivo_memorice{
+        font-size: var(--font16);
+    }
+
+    .txt_turno_memorice{
+        font-size: 23px;
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .txt_objetivo_simonDice{
+        font-size: var(--font16);
+    }
+}
+
+
+@media (min-width: 992px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .contenidoMensajeEmergenteSopaLetras{
+        font-size: var(--font16);
+    }
+
+    .txt_objetivo{
+        font-size: var(--font18);
+    }
+
+    .txt_nombres{
+        font-size: var(--font14);
+    }
+
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 23px;
+    }
+
+    /*---- TRES EN RAYA ---*/
+    .contenidoMensajeEmergenteTresEnRaya{
+        font-size: var(--font16);
+    }
+
+    .txt_turno{
+        font-size: 25px;
+    }
+
+    /*---- MEMORICE ----*/
+    .txt_turno_memorice{
+        font-size: 24px;
+    }
+
+    .txt_objetivo_memorice{
+        font-size: var(--font20);
+    }
+
+    .contenidoMensajeEmergenteMemorice{
+        font-size: var(--font16);
+    }
+
+    /*--- SIMÓN DICE ---*/
+    .txt_objetivo_simonDice{
+        font-size: var(--font20);
+    }
+
+    .contenidoMensajeEmergenteSD{
+        font-size: var(--font16);
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    /*---- INDEX ----*/
+    .opc_miniJuego{
+        opacity: 0.5;
+    }
+
+    .opc_miniJuego:hover{
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    /*---- SOPA DE LETRAS ---*/
+    .contenidoMensajeEmergenteSopaLetras{
+        font-size: var(--font20);
+    }
+
+    .txt_objetivo{
+        font-size: var(--font20);
+    }
+
+    .btn_jugar:hover, .btn_comenzarPartida:hover{
+        background-color: var(--rojoCentroIzquierda);
+    }
+
+    .btn_letra:hover{
+        background-color: var(--rojoCentroDerecha);
+        color: var(--blanco);
+    }
+
+    .txt_nombres{
+        font-size: var(--font18);
+    }
+
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 26px;
+    }
+
+    /*---- TRES EN RAYA ----*/
+    .btn_jugar_O_X:hover,.btn_comenzarPartida_tresEnRaya:hover{
+        background-color: var(--mostazaCentroIzquierda);
+    }
+
+    .contenidoMensajeEmergenteTresEnRaya{
+        font-size: var(--font20);
+    }
+
+    .txt_turno{
+        font-size: var(--font30);
+    }
+
+    /*--- MEMORICE ---*/
+    .btn_jugar_memorice:hover{
+        background-color: var(--verdeCentroIzquierda);
+    }
+
+    .txt_turno_memorice{
+        font-size: var(--font25);
+    }
+
+    .contenidoMensajeEmergenteMemorice{
+        font-size: var(--font20);
+    }
+
+    /*---- SIMÓN DICE ----*/
+    .btn_color{
+        box-shadow: none;
+    }
+
+    .btn_color:hover{
+        box-shadow: 1px var(--font3) var(--font15) 2px var(--negro);
+    }
+
+    .btn_jugar_SD:hover{
+        background-color: var(--calipsoCentroIzquierda);
+    }
+
+    .contenidoMensajeEmergenteSD{
+        font-size: var(--font20);
+    }
+
+}
+
+
+@media (min-width: 1400px) {
+
+    /*---- SOPA DE LETRAS ---*/
+    .btn_letra, .btn_letra_click, .palabra_correcta{
+        width: 32px;
+    }
+}

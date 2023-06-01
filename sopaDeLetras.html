@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b267a8a1d.js" crossorigin="anonymous"></script>
+
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <title>Minijuegos Cris</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="gradient_sopaDeLetras">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-3 d-flex align-items-center justify-content-center">
+                    <a class="py-1 px-2 rounded-pill volver" href="index.html"><i class="fa-solid fa-circle-left"></i> Volver</a>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 text-center">
+                    <h1 class="text-center py-4 text-white"><i class="fa-solid fa-glasses iconos_minijuegos"></i> <span class="tituloLetra titituloLetraInicial">S</span><span class="tituloLetra">o</span><span class="tituloLetra">p</span><span class="tituloLetra">a</span> <span class="tituloLetra">D</span><span class="tituloLetra">e</span> <span class="tituloLetra">L</span><span class="tituloLetra">e</span><span class="tituloLetra">t</span><span class="tituloLetra">r</span><span class="tituloLetra">a</span><span class="tituloLetra">s</span> <i class="fa-solid fa-pencil iconos_minijuegos"></i></h1>
+                </div>
+                <div class="col-12 col-sm-12 col-md-3"></div>
+            </div>
+        </div>
+        
+    </header>
+
+    <!-- Contenido -->
+    <main>
+        <div class="container">
+
+            <p class="mb-4 mt-5 txt_objetivo"><strong>Objetivo:</strong> Encuentra las palabras que se encuentras ocultas dentro del límite de tiempo establecido <i class="fa-regular fa-clock iconos_minijuegos"></i></p>
+
+            <div class="row">
+
+                <!-- Col ¿Estás listo/a? -->
+                <div class="col-12 col-sm-12 col-lg-3 col_letras">
+                    <div class="p-4 text-center rounded-3 border_sopaLetras">
+                        <p class="txt_tiempo"><strong><i class="fa-solid fa-stopwatch"></i> 
+                            
+                            <span id="count-down-timer-falso">--:--</span>
+                            <span id="count-down-timer" class="d-none"></span>
+                        
+                        </strong></p>
+
+                        <p class="txt_tiempo">¿Estás listo(a)?</p>
+
+                        <button class="rounded-pill border-0 px-4 py-2 btn_jugar" aria-label="A Jugar" type="button" data-bs-toggle="modal" data-bs-target="#modalAjugar"><strong>¡A Jugar!</strong></button>
+                        
+                        <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#modalMensajeEmergente">emergente</button> -->
+                    
+                    </div>
+                </div>
+
+                <!-- Col letras -->
+                <div class="col-12 col-sm-12 col-lg-6 my-4 my-lg-0 col_letras">
+                    <div class="p-1 p-sm-3 p-md-4 p-lg-1 p-xl-4 text-center rounded-3 border_sopaLetras">
+
+                        <!-- Fila 1 (0 - 15) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <br>
+
+                        <!-- Fila 2 (16 - 31) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">U</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <br>
+
+                        <!-- Fila 3 (32 - 47) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">R</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">D</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">U</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">C</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">U</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">S</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <br>
+
+                        <!-- Fila 4 (48 - 63) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">B</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">B</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <br>
+
+                        <!-- Fila 5 (64 - 79) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">S</button>
+                        <br>
+
+                        <!-- Fila 6 (80 - 96) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">N</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">L</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">O</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">E</button>
+                        <br>
+
+                        <!-- Fila 7 (97 - 112) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">I</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">B</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">C</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">O</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">N</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">F</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">E</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">R</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">I</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">R</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">L</button>
+                        <br>
+
+                        <!-- Fila 8 (113 - 129) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">Z</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">I</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">Y</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <br>
+
+                        <!-- Fila 9 (130 - 146) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">S</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">Z</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">R</button>
+                        <br>
+
+                        <!-- Fila 10 (147 - 163) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">D</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">I</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">E</button>
+                        <br>
+
+                        <!-- Fila 11 (164 - 180) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">O</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">R</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">U</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">T</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">C</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">E</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">S</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">T</button>
+                        <br>
+
+                        <!-- Fila 12 (181 - 197) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">N</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">S</button>
+                        <br>
+
+                        <!-- Fila 13 (198 - 214) -->
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">*</button>
+                        <button class="rounded-2 p-0 my-1 btn_letra" type="button">A</button>
+                        <br>
+
+                    </div>
+                    
+                </div>
+
+                <!-- Col palabras encontradas -->
+                <div class="col-12 col-sm-12 col-lg-3 col_letras">
+                    <div class="p-4 rounded-3 border_sopaLetras">
+                        <p class="text-center txt_nombres"><strong><i class="fa-solid fa-magnifying-glass"></i> Palabras Encontradas: <span class="puntos">0</span></strong></p>
+                        <ul>
+                            <li class="palabra">Asterales</li>
+                            <li class="palabra">Balbisiana</li>
+                            <li class="palabra">Conferir</li>
+                            <li class="palabra">Daucus</li>
+                            <li class="palabra">Oryza</li>
+                            <li class="palabra">Rutáceas</li>
+                            <li class="palabra">Urbanizado</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modales -->
+
+        <!-- Modal ¡A Jugar! -->
+        <div class="modal fade" id="modalAjugar" tabindex="-1" aria-labelledby="modalAjugar" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header gradient_sopaDeLetras">
+                        <h1 class="modal-title text-white fs-20" id="exampleModalLabel">Selecciona un límite de tiempo</h1>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="form-check">
+                                <input class="form-check-input rb_sopaDeLetras" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label fs-20" for="flexRadioDefault1">
+                                  5 Minutos
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input rb_sopaDeLetras" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label fs-20" for="flexRadioDefault2">
+                                  10 Minutos
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input rb_sopaDeLetras" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                                <label class="form-check-label fs-20" for="flexRadioDefault3">
+                                  15 Minutos
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="rounded-pill border-0 px-4 py-2 btn_comenzarPartida btn_deshabilitado" data-bs-dismiss="modal">Comenzar Partida</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Mensaje emergente -->
+        <div class="modal fade" id="modalMensajeEmergente" tabindex="-1" aria-labelledby="MensajeEmergente" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header gradient_sopaDeLetras">
+                        <h1 class="modal-title text-white fs-20 tituloMensajeEmergente" id="exampleModalLabel">Titulo modal emergente</h1>
+                    </div>
+                    <div class="modal-body mt-3">
+                       
+                        <p class="text-center contenidoMensajeEmergenteSopaLetras">Cuerpo de modal Emergente</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="assets/js/animacionTitulo.js"></script>
+    <script type="text/javascript" src="assets/js/sopaDeLetras.js"></script>
+</body>
+</html>
